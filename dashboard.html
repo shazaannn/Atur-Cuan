@@ -131,7 +131,7 @@
 <option value="tabungan">Tabungan</option>
 </select>
 <label>Jumlah (Rp)</label>
-<input id="jumlah" placeholder="Contoh: 1000000" type="number"/><label for="tanggal">Tanggal Transaksi</label><input id="tanggal" type="date"/><label>Kategori (jika pengeluaran)</label><input id="kategori" placeholder="Contoh: makan, transportasi" type="text"/>
+<input id="jumlah" placeholder="Contoh: 1000000" type="number"/><label>Kategori (jika pengeluaran)</label><input id="kategori" placeholder="Contoh: makan, transportasi" type="text"/>
 <button class="btn" onclick="tambahTransaksi()">Tambahkan</button>
 </div>
 <div class="form-box">
@@ -149,7 +149,6 @@
 function tambahTransaksi() {
   const tipe = document.getElementById("tipe").value;
   const jumlah = parseInt(document.getElementById("jumlah").value);
-  const tanggal = document.getElementById("tanggal").value || '2025-05-23';
   let kategori = document.getElementById("kategori").value.trim().toLowerCase();
 
   if (isNaN(jumlah) || jumlah <= 0) {
@@ -213,9 +212,6 @@ function resetData() {
     alert("Data keuangan berhasil direset.");
   }
 }
-
-if (!data.log) data.log = [];
-data.log.push({ tipe, jumlah, tanggal, kategori });
 </script>
 </body>
 </html>

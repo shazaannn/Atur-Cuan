@@ -112,43 +112,7 @@
       background-color: #f1f1f1;
       margin-top: 2rem;
     }
-  
-button.delete-target {
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-button.delete-target {
-  background-color: red;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-button.edit-target {
-  background-color: #ffc107;
-  color: black;
-  border: none;
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-left: 5px;
-}
-</style>
+  </style>
 </head>
 <body>
 <header>
@@ -221,30 +185,6 @@ button.edit-target {
     }
 
     document.addEventListener("DOMContentLoaded", tampilkanTarget);
-  
-function hapusTarget(index) {
-  const targets = JSON.parse(localStorage.getItem("aturcuan_targets") || "[]");
-  targets.splice(index, 1);
-  localStorage.setItem("aturcuan_targets", JSON.stringify(targets));
-  tampilkanTarget();
-}
-
-function editTarget(index) {
-  const targets = JSON.parse(localStorage.getItem("aturcuan_targets") || "[]");
-  const t = targets[index];
-  const newName = prompt("Edit nama target:", t.name);
-  const newAmount = prompt("Edit jumlah target:", t.amount);
-  const newProgress = prompt("Edit progress (%):", t.progress);
-  if (newName && newAmount && newProgress) {
-    targets[index] = {
-      name: newName,
-      amount: parseFloat(newAmount),
-      progress: parseFloat(newProgress)
-    };
-    localStorage.setItem("aturcuan_targets", JSON.stringify(targets));
-    tampilkanTarget();
-  }
-}
-</script>
+  </script>
 </body>
 </html>
